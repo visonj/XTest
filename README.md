@@ -2,7 +2,7 @@
 
 
 <div align="center"><img src="./docs/logo/xreflection_logo3.png" alt="XReflection Logo"/></div>
-<div align="center"><img src="./docs/logo/test111.png" alt="XReflection Logo"/></div>
+<img src="./docs/logo/XReflection_logo.png" alt="XReflection Logo" width="50%" height="50%"/>
 ## <div align="center"><b><a href="README.md">English</a> | <a href="README_CN.md">简体中文</a></b></div>
 
 

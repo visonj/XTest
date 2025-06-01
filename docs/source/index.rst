@@ -1,43 +1,73 @@
-.. _XReflection:
-
 XReflection - An Easy-to-use Toolbox for Single-image Reflection Removal
-====================================================================================================
+======================================================================
 
-XReflection is a versatile and efficient toolbox designed specifically for single-image reflection removal (SIRR). It integrates state-of-the-art solutions for training and inference, providing researchers and developers with a seamless, out-of-the-box experience for SIRR research.
+.. image:: ./docs/logo/xreflection_logo3.png
+   :alt: XReflection Logo
 
----
+.. centered:: `English <README.md>`_ | `简体中文 <README_CN.md>`_
 
-.. _key-features:
+.. image:: https://img.shields.io/badge/platform-Linux%7CWindows%7CmacOS-blue
+   :target: https://img.shields.io/badge/platform-Linux%7CWindows%7CmacOS-blue
+   :alt: Platform
 
-💡 Key Features
-----------------------------------------------------------------------------------------------------
+.. image:: https://img.shields.io/pypi/pyversions/mmcv
+   :target: https://img.shields.io/pypi/pyversions/mmcv
+   :alt: PyPI - Python Version
 
-- **Comprehensive Solutions** : Integrated state-of-the-art algorithms for single-image reflection removal.
-- **Seamless Multi-GPU/TPU/NPU Support** : Powered by PyTorch Lightning for scalable parallelization.
-- **Pretrained Model Library** : Access to a growing zoo of pretrained models for quick inference.
-- **Fast Data Preparation** : High-performance synthetic data pipeline for simulation and training tasks.
-- **Modular Design** : Clear and extensible architecture for customization and research.
+.. image:: https://img.shields.io/badge/pytorch-1.8~2.0-orange
+   :target: https://pytorch.org/get-started/previous-versions/
+   :alt: PyTorch
 
----
+.. image:: https://img.shields.io/badge/cuda-10.1~11.8-green
+   :target: https://developer.nvidia.com/cuda-downloads
+   :alt: CUDA
 
-.. _installation:
+.. image:: https://img.shields.io/pypi/v/mmcv
+   :target: https://img.shields.io/pypi/v/mmcv
+   :alt: PyPI
 
-🚀 Installation
-----------------------------------------------------------------------------------------------------
+.. image:: https://img.shields.io/github/license/open-mmlab/mmcv.svg
+   :target: https://img.shields.io/github/license/open-mmlab/mmcv.svg
+   :alt: License
 
-.. _requirements:
+XReflection is a neat toolbox tailored for single-image reflection removal(SIRR). We offer state-of-the-art SIRR solutions for training and inference, with a high-performance data pipeline, multi-GPU/TPU/NPU support, and more!
 
-### Requirements
+----
+
+.. rubric:: 📰 News and Updates
+
+* **[Upcoming]** More models are on the way!
+* **[2025-05-26]** Release a training/testing pipeline.
+
+----
+
+.. rubric:: 💡 Key Features
+
+* All-in-one integration for the state-of-the-art SIRR solutions. We aim to create an out-of-the-box experience for SIRR research.
+* Multi-GPU/TPU support via PyTorchLightning.
+* Pretrained model zoo.
+* Fast data synthesis pipeline.
+
+----
+
+.. rubric:: 📝 Introduction
+
+Please visit the documentation for more features and usage.
+
+----
+
+.. rubric:: 🚀 Installation
+
+.. rubric:: Requirements
+
 Make sure you have the following system dependencies installed:
 
-- Python >= 3.8
-- PyTorch >= 1.10
-- PyTorchLightning >= 1.5
-- CUDA >= 11.2 (for GPU support)
+* Python >= 3.8
+* PyTorch >= 1.10
+* PyTorchLightning >= 1.5
+* CUDA >= 11.2 (for GPU support)
 
-.. _installation-commands:
-
-### Installation Commands
+.. rubric:: Installation Commands
 
 .. code-block:: bash
 
@@ -48,16 +78,12 @@ Make sure you have the following system dependencies installed:
    # Install dependencies
    pip install -r requirements.txt
 
----
+----
 
-.. _getting-started:
+.. rubric:: 📦 Getting Started
 
-📦 Getting Started
-----------------------------------------------------------------------------------------------------
+.. rubric:: Inference with Pretrained Models
 
-.. _inference-with-pretrained-models:
-
-### Inference with Pretrained Models
 Run reflection removal on an image:
 
 .. code-block:: python
@@ -66,33 +92,26 @@ Run reflection removal on an image:
 
    result = inference.run("path_to_your_image.jpg", model_name="default_model")
 
-.. _training-a-model:
-
-### Training a Model
+.. rubric:: Training a Model
 
 .. code-block:: bash
 
    python tools/train.py --config configs/train_config.yaml
 
-.. _data-preparation:
+.. rubric:: Data Preparation
 
-### Data Preparation
 Generate synthetic reflection datasets:
 
 .. code-block:: bash
 
    python tools/data_pipeline.py --input_dir ./raw_images --output_dir ./synthetic_data
 
----
+----
 
-.. _features-in-detail:
+.. rubric:: 🌟 Features in Detail
 
-🌟 Features in Detail
-----------------------------------------------------------------------------------------------------
+.. rubric:: Pretrained Model Zoo
 
-.. _pretrained-model-zoo:
-
-### Pretrained Model Zoo
 Access pretrained models for various SIRR algorithms:
 
 +---------------------+------------------------+---------------------+
@@ -103,96 +122,15 @@ Access pretrained models for various SIRR algorithms:
 | Enhanced Model      | Optimized structure    | PSNR: 34.3, SSIM: 0.88 |
 +---------------------+------------------------+---------------------+
 
-.. _data-pipeline:
+----
 
-### Data Pipeline
-Create synthetic reflection datasets efficiently with custom parameters:
-
-.. code-block:: yaml
-
-   # Example configuration
-   reflection_strength: 0.6
-   blur_amount: 2.0
-
----
-
-.. _development-workflow:
-
-🛠 Development Workflow
-----------------------------------------------------------------------------------------------------
-
-.. _extending-the-toolbox:
-
-### Extending the Toolbox
-To add your custom model or feature, follow these steps:
-
-1. Add your model implementation in ``xreflection/models``.
-2. Register the model in ``xreflection/utils/model_registry.py``.
-3. Update configuration.
-
----
-
-.. _roadmap:
-
-🎯 Roadmap
-----------------------------------------------------------------------------------------------------
-
-- [x] Basic training/testing pipeline
-- [x] Initial pretrained models
-- [ ] Support for distributed TPU training
-- [ ] Enhanced dataset synthesis strategies
-
----
-
-.. _citation:
-
-📄 Citation
-----------------------------------------------------------------------------------------------------
-
-If you find XReflection useful in your research or work, please consider citing:
-
-.. code-block:: bibtex
-
-   @misc{xreflection2024,
-     title={XReflection: A Toolbox for Single-image Reflection Removal},
-     author={Your Name},
-     year={2024},
-     howpublished={\url{https://github.com/your-username/XReflection}}
-   }
-
----
-
-.. _news-and-updates:
-
-📰 News and Updates
-----------------------------------------------------------------------------------------------------
-
-- **[2024-06-06]** Released training & testing pipelines.
-- **[Upcoming]** Pretrained models for advanced architectures.
-
----
-
-.. _acknowledgements:
-
-🙏 Acknowledgements
-----------------------------------------------------------------------------------------------------
-
-Special thanks to `Google's TPU Research Cloud <https://sites.research.google/open/>`_ for providing computational resources.
-
----
-
-.. _contact:
-
-📧 Contact
-----------------------------------------------------------------------------------------------------
-
-For issues, feedback, or collaboration, reach out via GitHub Issues or email: **your-email@example.com**
-
----
-
-.. _license:
-
-📜 License
-----------------------------------------------------------------------------------------------------
+.. rubric:: 🙏 License and Acknowledgement
 
 This project is licensed under the Apache License 2.0. See the `LICENSE <LICENSE.md>`_ file for details.
+The authors would express gratitude to the computational resource support from Google's TPU Research Cloud.
+
+----
+
+.. rubric:: 📧 Contact
+
+If you have any questions, please email **peiyuan_he@tju.edu.cn**

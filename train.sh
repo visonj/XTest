@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=0,1,2,3 python xreflection/tools/train.py --config options/train_rdnet.yml
